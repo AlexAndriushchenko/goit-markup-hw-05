@@ -10,6 +10,8 @@
   --header-board-color: #ececec;
   --main-font: "Roboto", sans-serif;
   --secondary-font: "Raleway", sans-serif;
+  /* animations */
+  --fast-anim: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 html {
@@ -154,6 +156,8 @@ img {
   letter-spacing: 0.02em;
   text-decoration: none;
   color: var(--primary-text-color);
+
+  transition: color var(--fast-anim);
 }
 
 .link-header:hover,
@@ -182,6 +186,8 @@ img {
   letter-spacing: 0.02em;
   text-decoration: none;
   color: var(--text-color);
+
+  transition: color var(--fast-anim);
 }
 
 .link-contact:hover,
@@ -202,7 +208,6 @@ img {
 .hero {
   padding-top: 200px;
   padding-bottom: 200px;
-  /* background-color: var(--primary-bg-color); */
   text-align: center;
 }
 
@@ -233,6 +238,8 @@ img {
   border-radius: 4px;
   border: 0;
   padding: 10px 32px;
+
+  transition: background-color var(--fast-anim);
 }
 
 .hero-button:hover,
@@ -241,7 +248,6 @@ img {
 }
 
 /* modal form */
-
 .backdrop {
   position: fixed;
   top: 0;
@@ -380,7 +386,6 @@ img {
   position: absolute;
   bottom: 0;
   left: 0;
-  content: "";
 
   display: flex;
   justify-content: center;
@@ -483,6 +488,8 @@ img {
   background-color: #ffffff;
   color: #afb1b8;
   border-radius: 50%;
+
+  transition: color var(--fast-anim), background-color var(--fast-anim);
 }
 
 .socials-link:hover,
@@ -519,6 +526,8 @@ img {
   border: 1px solid #afb1b8;
   border-radius: 4px;
   color: #afb1b8;
+
+  transition: border-color var(--fast-anim);
 }
 
 .clients-link:hover,
@@ -528,6 +537,7 @@ img {
 
 .clients-icon {
   fill: currentColor;
+  transition: fill var(--fast-anim);
 }
 
 .clients-link:hover .clients-icon,
@@ -607,6 +617,7 @@ img {
   background-color: rgba(255, 255, 255, 0.1);
   color: #ffffff;
   border-radius: 50%;
+  transition: color var(--fast-anim), background-color var(--fast-anim);
 }
 
 .socials-linkfooter:hover,
@@ -647,6 +658,9 @@ img {
   border: none;
   border-radius: 4px;
   padding: 6px 22px;
+
+  transition: color var(--fast-anim), background-color var(--fast-anim),
+    box-shadow var(--fast-anim);
 }
 
 .portfolio-btn:hover,
@@ -673,6 +687,7 @@ img {
 .portfolio-link {
   display: block;
   text-decoration: none;
+  transition: box-shadow var(--fast-anim);
 }
 
 .portfolio-link:hover,
@@ -714,4 +729,40 @@ img {
   border-left: 1px solid #eee;
   border-right: 1px solid #eee;
   border-bottom: 1px solid #eee;
+}
+
+.anim-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-text-anim {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 370px;
+  height: 294px;
+
+  padding: 63px 24px;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+
+  color: var(--title-text-color);
+  background: rgba(33, 150, 243, 0.9);
+
+  transform: translateY(100%);
+  transition: transform var(--fast-anim);
+}
+
+.portfolio-item:hover .portfolio-text-anim,
+.portfolio-item:focus .portfolio-text-anim {
+  transform: translateX(0);
 }
